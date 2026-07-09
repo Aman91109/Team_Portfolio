@@ -10,7 +10,7 @@ This directory profiles the three founding software engineers and system archite
 | :--- | :--- | :--- | :--- | :--- |
 | **Somesh Kumar Mishra** | Full-Stack & GenAI Architect | MERN Stack, Socket.IO, Redis, LLM Chains | React, Node.js, Express, MongoDB, Python, Docker | B.Tech IT, MIT Muzaffarpur (CGPA: 8.34) |
 | **Nishant Kumar** | Backend & ML Systems Engineer | Backend APIs, DB Mappings, NLP Pipelines | TypeScript, Next.js, Python, Mongoose, PaddleOCR | B.Tech IT, MIT Muzaffarpur (CGPA: 8.24) |
-| **Aman Kumar** | Computer Vision & Data Scientist | CNN Modeling, Predictive Analytics, AI Chatbots | Python, TensorFlow, PyTorch, Supabase, OpenCV | B.Tech CSE, DTC Delhi (CGPA: 7.6) |
+| **Aman Kumar** | Researcher & Data Scientist | CNN Modeling, Predictive Analytics, AI Chatbots | Python, TensorFlow, PyTorch, Supabase, OpenCV | B.Tech CSE, DTC Delhi (CGPA: 7.6) |
 
 ---
 

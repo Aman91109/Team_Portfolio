@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MessageSquare, Upload, Calendar as CalendarIcon, CheckCircle2, AlertCircle, Clock, MapPin } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { API_BASE_URL } from '@/config';
 
 const budgets = [
   '$1,000 - $3,000',
@@ -81,7 +82,7 @@ export default function Contact() {
         bodyData.append('fileAttachment', file);
       }
 
-      const res = await fetch('http://localhost:5000/api/public/lead', {
+      const res = await fetch(`${API_BASE_URL}/api/public/lead`, {
         method: 'POST',
         body: bodyData, // Multi-part form-data
       });

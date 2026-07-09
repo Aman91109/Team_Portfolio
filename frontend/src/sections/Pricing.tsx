@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Check, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import TiltCard from '../components/ui/TiltCard';
+import { API_BASE_URL } from '@/config';
 
 const fallbackPricing = [
   {
@@ -55,7 +56,7 @@ export default function Pricing() {
   useEffect(() => {
     const fetchPricing = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/public/pricing');
+        const res = await fetch(`${API_BASE_URL}/api/public/pricing`);
         const data = await res.json();
         if (data.success && data.data && data.data.length > 0) {
           // Sort plans by price

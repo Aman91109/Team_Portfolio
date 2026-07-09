@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Send, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { API_BASE_URL } from '@/config';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ export default function Footer() {
 
     setStatus('loading');
     try {
-      const res = await fetch('http://localhost:5000/api/public/newsletter', {
+      const res = await fetch(`${API_BASE_URL}/api/public/newsletter`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

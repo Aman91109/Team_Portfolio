@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { API_BASE_URL } from '@/config';
 
 const fallbackFAQs = [
   { _id: 'f1', question: 'How long does a typical full-stack project take?', answer: 'Simple Next.js landing portfolios or corporate websites take 2-4 weeks. Complex full-stack applications with database panels take 6-12 weeks.', order: 1 },
@@ -19,7 +20,7 @@ export default function FAQ() {
   useEffect(() => {
     const fetchFAQs = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/public/faqs');
+        const res = await fetch(`${API_BASE_URL}/api/public/faqs`);
         const data = await res.json();
         if (data.success && data.data && data.data.length > 0) {
           // Sort by order parameter

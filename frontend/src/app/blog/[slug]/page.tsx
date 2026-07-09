@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';
+import { API_BASE_URL } from '@/config';
 
 const fallbackBlogs = [
   {
@@ -105,7 +106,7 @@ app.post('/api/classify', (req, res) => {
 
 async function getBlogPost(slug: string) {
   try {
-    const res = await fetch(`http://localhost:5000/api/public/blogs/${slug}`, {
+    const res = await fetch(`${API_BASE_URL}/api/public/blogs/${slug}`, {
       next: { revalidate: 60 } // Cache and revalidate
     });
     const data = await res.json();

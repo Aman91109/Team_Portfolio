@@ -7,6 +7,7 @@ import {
   LogOut, Plus, Trash2, Edit3, Download, RefreshCw, Send, CheckCircle2, ChevronRight, Briefcase 
 } from 'lucide-react';
 import TiltCard from '@/components/ui/TiltCard';
+import { API_BASE_URL } from '@/config';
 
 interface AnalyticsData {
   summary: {
@@ -100,38 +101,38 @@ export default function AdminDashboard() {
       const headers = { Authorization: `Bearer ${token}` };
       
       // Load Analytics
-      const resAnal = await fetch('http://localhost:5000/api/analytics', { headers });
+      const resAnal = await fetch(`${API_BASE_URL}/api/analytics`, { headers });
       const dataAnal = await resAnal.json();
       if (dataAnal.success) setAnalytics(dataAnal.data);
 
       // Load Leads
-      const resLeads = await fetch('http://localhost:5000/api/cms/leads', { headers });
+      const resLeads = await fetch(`${API_BASE_URL}/api/cms/leads`, { headers });
       const dataLeads = await resLeads.json();
       if (dataLeads.success) setLeadsList(dataLeads.data);
 
       // Load Subs
-      const resSubs = await fetch('http://localhost:5000/api/cms/subscribers', { headers });
+      const resSubs = await fetch(`${API_BASE_URL}/api/cms/subscribers`, { headers });
       const dataSubs = await resSubs.json();
       if (dataSubs.success) setSubscribersList(dataSubs.data);
 
       // Load static entities for CMS tab use
-      const resProj = await fetch('http://localhost:5000/api/public/portfolio');
+      const resProj = await fetch(`${API_BASE_URL}/api/public/portfolio`);
       const dataProj = await resProj.json();
       if (dataProj.success) setCmsProjects(dataProj.data);
 
-      const resTeam = await fetch('http://localhost:5000/api/public/team');
+      const resTeam = await fetch(`${API_BASE_URL}/api/public/team`);
       const dataTeam = await resTeam.json();
       if (dataTeam.success) setCmsTeam(dataTeam.data);
 
-      const resSvc = await fetch('http://localhost:5000/api/public/services');
+      const resSvc = await fetch(`${API_BASE_URL}/api/public/services`);
       const dataSvc = await resSvc.json();
       if (dataSvc.success) setCmsServices(dataSvc.data);
 
-      const resFaqs = await fetch('http://localhost:5000/api/public/faqs');
+      const resFaqs = await fetch(`${API_BASE_URL}/api/public/faqs`);
       const dataFaqs = await resFaqs.json();
       if (dataFaqs.success) setCmsFaqs(dataFaqs.data);
 
-      const resBlogs = await fetch('http://localhost:5000/api/public/blogs');
+      const resBlogs = await fetch(`${API_BASE_URL}/api/public/blogs`);
       const dataBlogs = await resBlogs.json();
       if (dataBlogs.success) setCmsBlogs(dataBlogs.data);
 
@@ -155,7 +156,7 @@ export default function AdminDashboard() {
   // Lead update pipeline status
   const updateLeadStatus = async (id: string, newStatus: string) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/cms/leads/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/cms/leads/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -177,7 +178,7 @@ export default function AdminDashboard() {
   const deleteLead = async (id: string) => {
     if (!confirm('Are you sure you want to delete this inquiry?')) return;
     try {
-      await fetch(`http://localhost:5000/api/cms/leads/${id}`, {
+      await fetch(`${API_BASE_URL}/api/cms/leads/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -192,7 +193,7 @@ export default function AdminDashboard() {
   const deleteSubscriber = async (id: string) => {
     if (!confirm('Are you sure you want to remove this subscriber?')) return;
     try {
-      await fetch(`http://localhost:5000/api/cms/subscribers/${id}`, {
+      await fetch(`${API_BASE_URL}/api/cms/subscribers/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -205,14 +206,14 @@ export default function AdminDashboard() {
 
   // Export Leads to CSV
   const handleCSVExport = () => {
-    window.open(`http://localhost:5000/api/cms/leads/export?token=${token}`, '_blank');
+    window.open(`${API_BASE_URL}/api/cms/leads/export?token=${token}`, '_blank');
   };
 
   // Generic Deletion for CMS Tiers
   const handleCMSDelete = async (entity: string, id: string) => {
     if (!confirm(`Delete this item from ${entity}?`)) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/cms/${entity}/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/cms/${entity}/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -229,7 +230,7 @@ export default function AdminDashboard() {
   const handleCMSSubmit = async (entity: string, bodyObj: any) => {
     try {
       const isEdit = !!editingId;
-      const url = `http://localhost:5000/api/cms/${entity}${isEdit ? `/${editingId}` : ''}`;
+      const url = `${API_BASE_URL}/api/cms/${entity}${isEdit ? `/${editingId}` : ''}`;
       const method = isEdit ? 'PUT' : 'POST';
       
       const res = await fetch(url, {
@@ -561,7 +562,7 @@ export default function AdminDashboard() {
                           <td className="py-4 pr-4">
                             {lead.fileAttachment ? (
                               <a
-                                href={`http://localhost:5000${lead.fileAttachment}`}
+                                href={`${API_BASE_URL}${lead.fileAttachment}`}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="text-[10px] font-mono text-[#8B5CF6] hover:underline"

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, X, Calendar, User, Layers } from 'lucide-react';
 import Image from 'next/image';
 import TiltCard from '../components/ui/TiltCard';
+import { API_BASE_URL } from '@/config';
 
 const categories = [
   'All',
@@ -113,7 +114,7 @@ export default function Portfolio() {
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const url = `http://localhost:5000/api/public/portfolio${
+        const url = `${API_BASE_URL}/api/public/portfolio${
           selectedCat !== 'All' ? `?category=${encodeURIComponent(selectedCat)}` : ''
         }`;
         const res = await fetch(url);

@@ -6,6 +6,7 @@ import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import TiltCard from '../components/ui/TiltCard';
+import { API_BASE_URL } from '@/config';
 
 const fallbackBlogs = [
   {
@@ -50,7 +51,7 @@ export default function BlogSection() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/public/blogs');
+        const res = await fetch(`${API_BASE_URL}/api/public/blogs`);
         const data = await res.json();
         if (data.success && data.data && data.data.length > 0) {
           setBlogs(data.data);

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Sparkles, Briefcase, Award } from 'lucide-react';
 import Image from 'next/image';
 import TiltCard from '../components/ui/TiltCard';
+import { API_BASE_URL } from '@/config';
 
 const fallbackTeam = [
   {
@@ -57,7 +58,7 @@ export default function Team() {
   useEffect(() => {
     const fetchTeam = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/public/team');
+        const res = await fetch(`${API_BASE_URL}/api/public/team`);
         const data = await res.json();
         if (data.success && data.data && data.data.length > 0) {
           setTeam(data.data);

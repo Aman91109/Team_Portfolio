@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import * as Icons from 'lucide-react';
 import TiltCard from '../components/ui/TiltCard';
+import { API_BASE_URL } from '@/config';
 
 // Fallback services if API is offline
 const fallbackServices = [
@@ -31,7 +32,7 @@ export default function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/public/services');
+        const res = await fetch(`${API_BASE_URL}/api/public/services`);
         const data = await res.json();
         if (data.success && data.data && data.data.length > 0) {
           setServices(data.data);

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import Image from 'next/image';
 import TiltCard from '../components/ui/TiltCard';
+import { API_BASE_URL } from '@/config';
 
 const fallbackTestimonials = [
   {
@@ -48,7 +49,7 @@ export default function Testimonials() {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/public/testimonials');
+        const res = await fetch(`${API_BASE_URL}/api/public/testimonials`);
         const data = await res.json();
         if (data.success && data.data && data.data.length > 0) {
           setTestimonials(data.data);
