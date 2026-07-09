@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "b1",
+    "title": "Mastering Framer Motion in Next.js App Router",
+    "slug": "mastering-framer-motion-in-next-js-app-router",
+    "excerpt": "Learn how to construct buttery-smooth scroll-triggered entrance clips and responsive glass overlays.",
+    "content": "\n# Core Scroll Physics with Framer Motion\n\nFramer motion has revolutionized visual development in React. By using standard `motion.div` wrappers and attaching them to scroll states, we can build Awwwards-level components.\n\n## Getting Started\nFirst, install the motion package:\n```bash\nnpm i framer-motion\n```\n\n## Tips for High Performance\n- Avoid animating layout triggers like width, height, top, or left.\n- Stick to transform matrices (`x`, `y`, `scale`, `rotate`) and `opacity`.\n      ",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    "author": "Zephyr Croft",
+    "readTime": "4 Min Read",
+    "tags": [
+      "Next.js",
+      "Framer Motion",
+      "Web Design"
+    ],
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "b2",
+    "title": "Serving Machine Learning Models via Node.js Rest APIs",
+    "slug": "serving-machine-learning-models-via-node-js-rest-apis",
+    "excerpt": "An in-depth guide on deploying Python NLP scripts and using Express child process streams.",
+    "content": "\n# Interfacing Express and Python\n\nMachine learning engineers often run into bottlenecks when attempting to host predictive neural nets on JavaScript environments.\n\n## Microservices\nKeep the environments separated. Deploy your Python code using a FastAPI microservice and query from Express.\n      ",
+    "image": "https://images.unsplash.com/photo-1527474305487-b87b222841cc?auto=format&fit=crop&q=80&w=800",
+    "author": "Aiden Vance",
+    "readTime": "6 Min Read",
+    "tags": [
+      "Express",
+      "Python",
+      "Machine Learning"
+    ],
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  }
+]

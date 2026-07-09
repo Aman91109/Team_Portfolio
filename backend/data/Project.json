@@ -1,0 +1,130 @@
+[
+  {
+    "_id": "p1",
+    "title": "Aura: AI-Driven CRM Engine",
+    "description": "A fully interactive, premium dashboard utilizing Deep Learning NLP models to scan consumer emails, predict churn, and suggest auto-responses via Express APIs. The frontend features glassmorphic widgets, charts, and real-time sockets.",
+    "images": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+    ],
+    "technology": [
+      "Next.js",
+      "React",
+      "MongoDB",
+      "Python/Flask",
+      "Tailwind CSS",
+      "Recharts"
+    ],
+    "category": "AI Projects",
+    "client": "Aura Analytics Corp",
+    "duration": "3 Months",
+    "github": "https://github.com",
+    "liveDemo": "https://example.com",
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "p2",
+    "title": "Veridian: Carbon Offset Ledger",
+    "description": "Futuristic blockchain-enabled business tool representing Carbon Offsets across dynamic SVG maps. Built using Node.js backend with JWT authentication and strict admin verification channels.",
+    "images": [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+    ],
+    "technology": [
+      "Next.js",
+      "Express.js",
+      "MongoDB",
+      "Web3.js",
+      "Framer Motion"
+    ],
+    "category": "Web Apps",
+    "client": "Veridian Ecology Inc",
+    "duration": "2 Months",
+    "github": "https://github.com",
+    "liveDemo": "https://example.com",
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "p3",
+    "title": "E-Pulse: Next-Gen Shopify Engine",
+    "description": "E-commerce interface with custom floating checkout modules, Stripe integrations, dynamic invoice generators, and a luxury admin metrics dashboard loaded with framer animations.",
+    "images": [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800"
+    ],
+    "technology": [
+      "Next.js",
+      "Express",
+      "Mongoose",
+      "Stripe API",
+      "GSAP ScrollTrigger"
+    ],
+    "category": "Business Websites",
+    "client": "Pulse Brand Group",
+    "duration": "2.5 Months",
+    "github": "https://github.com",
+    "liveDemo": "https://example.com",
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "p4",
+    "title": "Optima: Supply Chain Forecaster",
+    "description": "Advanced machine learning interface training multivariate regressions and LSTM models in Python, served via secured Express REST endpoints displaying predictive graphs.",
+    "images": [
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800"
+    ],
+    "technology": [
+      "Next.js",
+      "Python/Tensorflow",
+      "Express.js",
+      "Tailwind",
+      "MongoDB"
+    ],
+    "category": "ML Projects",
+    "client": "Optima Logistics",
+    "duration": "4 Months",
+    "github": "https://github.com",
+    "liveDemo": "https://example.com",
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "p5",
+    "title": "Nova: Crypto Wallet & Portfolio",
+    "description": "Mobile cryptocurrency web application supporting transaction exports, live currency graphs, localized JWT auth, and customizable glassmorphic border elements.",
+    "images": [
+      "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=800"
+    ],
+    "technology": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "CoinGecko API"
+    ],
+    "category": "Mobile Apps",
+    "client": "Nova Labs",
+    "duration": "1.5 Months",
+    "github": "https://github.com",
+    "liveDemo": "https://example.com",
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "p6",
+    "title": "Specter: Security Command Board",
+    "description": "Highly secure, custom admin command panel featuring real-time firewall block rates, active sessions monitor, role-based controls, and quick leads pipelines.",
+    "images": [
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800"
+    ],
+    "technology": [
+      "Next.js",
+      "Express.js",
+      "JWT",
+      "MongoDB",
+      "ChartJS",
+      "Lenis Scroll"
+    ],
+    "category": "Admin Panels",
+    "client": "Specter Cyber Security",
+    "duration": "3 Months",
+    "github": "https://github.com",
+    "liveDemo": "https://example.com",
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  }
+]

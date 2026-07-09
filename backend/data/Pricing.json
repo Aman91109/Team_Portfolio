@@ -1,0 +1,49 @@
+[
+  {
+    "_id": "pr1",
+    "name": "Starter",
+    "price": "$1,999",
+    "period": "Project",
+    "features": [
+      "High-Fidelity Figma UI/UX Design",
+      "Responsive Next.js Frontend Website",
+      "Standard Contact Form Integration",
+      "Basic On-Page SEO Mapping",
+      "3 Months Deployment Support"
+    ],
+    "highlighted": false,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "pr2",
+    "name": "Professional",
+    "price": "$4,999",
+    "period": "Project",
+    "features": [
+      "Full-Stack Next.js + Express API Server",
+      "Custom MongoDB Database Architecture",
+      "Secure JWT Authentication & Panels",
+      "Nodemailer SMTP System Alerts",
+      "Framer Motion & GSAP Scroll Interactions",
+      "6 Months Maintenance & Backups"
+    ],
+    "highlighted": true,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "pr3",
+    "name": "Enterprise",
+    "price": "Custom",
+    "period": "Project",
+    "features": [
+      "Custom LLM Integration / Fine-tuning",
+      "Deep Learning Predictive Models",
+      "Multi-user Role Admin Command CMS",
+      "Cloudinary & Multer File Pipelines",
+      "Complex Procedural Three.js 3D Scenes",
+      "Lifetime Patch Support & AWS Host Setup"
+    ],
+    "highlighted": false,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  }
+]

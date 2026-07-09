@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "f1",
+    "question": "How long does a typical full-stack project take?",
+    "answer": "Simple Next.js landing portfolios or corporate websites take 2-4 weeks. Complex full-stack applications with database panels take 6-12 weeks.",
+    "order": 1,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "f2",
+    "question": "Do you design in Figma before coding?",
+    "answer": "Yes! Elena Rostova, our Creative Director, maps user flows, wireframes, and complete high-fidelity desktop and mobile layouts in Figma.",
+    "order": 2,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "f3",
+    "question": "Can we edit the website content after launch?",
+    "answer": "Absolutely. We deliver a custom-tailored Admin Dashboard CMS where you can manage portfolio projects, blogs, team profiles, and FAQs.",
+    "order": 3,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "f4",
+    "question": "What happens to file attachments sent via contact form?",
+    "answer": "They are routed through our secure Multer pipeline and hosted on Cloudinary or served locally from our uploads folder.",
+    "order": 4,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  },
+  {
+    "_id": "f5",
+    "question": "Do you offer hosting setup and cloud support?",
+    "answer": "Yes, we deploy Next.js to Vercel, Node/Express to Render, and database to MongoDB Atlas by default, or setting up custom Docker/AWS.",
+    "order": 5,
+    "createdAt": "2026-07-08T10:34:16.431Z"
+  }
+]

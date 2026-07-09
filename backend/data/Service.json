@@ -1,0 +1,194 @@
+[
+  {
+    "_id": "s1",
+    "name": "Website Development",
+    "description": "Custom, blazing-fast, and secure website development using Next.js & React.",
+    "iconName": "Layout",
+    "features": [
+      "Responsive Design",
+      "Next.js & React",
+      "SEO Friendly",
+      "High Performance"
+    ]
+  },
+  {
+    "_id": "s2",
+    "name": "Landing Pages",
+    "description": "Conversion-optimized landing pages that turn traffic into leads and customers.",
+    "iconName": "Compass",
+    "features": [
+      "Clear CTAs",
+      "A/B Tested Layouts",
+      "Super Fast Load",
+      "Analytics Integrated"
+    ]
+  },
+  {
+    "_id": "s3",
+    "name": "Business Websites",
+    "description": "High-end websites that establish trust and command market authority.",
+    "iconName": "Building",
+    "features": [
+      "Corporate Design",
+      "CMS Integration",
+      "Secure Hosting",
+      "Lead Capturing"
+    ]
+  },
+  {
+    "_id": "s4",
+    "name": "Portfolio Websites",
+    "description": "Premium showcase portfolios featuring modern animations and glassmorphism styling.",
+    "iconName": "Briefcase",
+    "features": [
+      "Cinematic Effects",
+      "Dark/Light Theme",
+      "Custom Curators",
+      "Smooth Scroll"
+    ]
+  },
+  {
+    "_id": "s5",
+    "name": "E-Commerce",
+    "description": "Fully featured shopping experiences with custom checkouts, subscriptions, and panel boards.",
+    "iconName": "ShoppingBag",
+    "features": [
+      "Stripe Integration",
+      "Order Dashboards",
+      "Infinite Products",
+      "Inventory Control"
+    ]
+  },
+  {
+    "_id": "s6",
+    "name": "AI Chatbots",
+    "description": "Intelligent, automated agents using ChatGPT / Claude APIs to engage visitors 24/7.",
+    "iconName": "MessageSquareCode",
+    "features": [
+      "Context Retention",
+      "API Integrations",
+      "Custom Embeds",
+      "Human Handover"
+    ]
+  },
+  {
+    "_id": "s7",
+    "name": "Machine Learning",
+    "description": "Advanced ML modeling, data analytics, predictive regression, and segmentation systems.",
+    "iconName": "Cpu",
+    "features": [
+      "Python & PyTorch",
+      "Data Pipeline Dev",
+      "Model Optimization",
+      "Custom APIs"
+    ]
+  },
+  {
+    "_id": "s8",
+    "name": "Deep Learning",
+    "description": "Complex neural networks for vision classification, text analysis, and NLP workloads.",
+    "iconName": "Brain",
+    "features": [
+      "CNNs & RNNs",
+      "Image Processing",
+      "Transformers Dev",
+      "High Accuracy Models"
+    ]
+  },
+  {
+    "_id": "s9",
+    "name": "Python Automation",
+    "description": "Custom web scrapers, data entry bots, reports automation, and workflow scripts.",
+    "iconName": "Terminal",
+    "features": [
+      "Web Scraping",
+      "Zapier Automation",
+      "API Syncs",
+      "Custom Cron Jobs"
+    ]
+  },
+  {
+    "_id": "s10",
+    "name": "API Development",
+    "description": "Robust, fast, and scalable Node/Express REST & GraphQL endpoints with authentication.",
+    "iconName": "Share2",
+    "features": [
+      "JWT & OAuth",
+      "API Documentation",
+      "Rate Limiting",
+      "Highly Extensible"
+    ]
+  },
+  {
+    "_id": "s11",
+    "name": "Dashboard Development",
+    "description": "Aesthetic, interactive monitoring consoles showcasing leads, analytics, and CRM charts.",
+    "iconName": "PieChart",
+    "features": [
+      "Recharts Visuals",
+      "Real-time Feeds",
+      "Export Options",
+      "Custom Access Level"
+    ]
+  },
+  {
+    "_id": "s12",
+    "name": "UI/UX Design",
+    "description": "Premium digital designs mapped in Figma utilizing futuristic Awwwards-style standards.",
+    "iconName": "Figma",
+    "features": [
+      "Figma Prototypes",
+      "User Journey Mapping",
+      "High-Fidelity Mockups",
+      "Component Libraries"
+    ]
+  },
+  {
+    "_id": "s13",
+    "name": "Graphic Design",
+    "description": "High-end branding, custom vectors, promotional material, and corporate logos.",
+    "iconName": "Palette",
+    "features": [
+      "Vector Graphics",
+      "Branding Booklets",
+      "Digital Artwork",
+      "Social Kits"
+    ]
+  },
+  {
+    "_id": "s14",
+    "name": "SEO Optimization",
+    "description": "Rigorous keyword research, speed auditing, and schema mappings to reach Page 1.",
+    "iconName": "Search",
+    "features": [
+      "Site Audit",
+      "Schema Mappings",
+      "PageSpeed Boost",
+      "Keyword Rank Tracking"
+    ]
+  },
+  {
+    "_id": "s15",
+    "name": "Hosting & Deployment",
+    "description": "Vercel, Render, AWS, or Docker setup with CI/CD triggers and automated backups.",
+    "iconName": "Cloud",
+    "features": [
+      "GitHub Actions",
+      "Zero Downtime",
+      "SSL Certificate Config",
+      "Scalable Cluster Setup"
+    ]
+  },
+  {
+    "_id": "s16",
+    "name": "Maintenance",
+    "description": "Round-the-clock support, dependency patches, speed audits, and content updates.",
+    "iconName": "ShieldAlert",
+    "features": [
+      "Daily Backups",
+      "Package Audits",
+      "Bug Resolutions",
+      "24x7 Monitor Alerts"
+    ]
+  }
+]

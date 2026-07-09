@@ -1,0 +1,35 @@
+# Implementation Tasks
+
+- `[x]` **Backend Setup & Core Configurations**
+  - `[x]` Initialize npm and create directory layout for `/backend`
+  - `[x]` Set up database connection and security middlewares
+  - `[x]` Design schemas (Admin, Lead, Subscriber, Project, TeamMember, FAQ, Service, Testimonial, Pricing, Blog)
+  - `[x]` Implement Authentication (JWT, bcrypt, Seed admin script)
+  - `[x]` Implement upload middleware with local fallback
+  - `[x]` Implement routes for Public Forms (Leads, Newsletter) and CMS Admin controls
+  - `[x]` Implement analytics endpoints for the Admin Dashboard
+- `[x]` **Frontend Setup & Core styling**
+  - `[x]` Initialize Next.js 15 app in `/frontend` using `create-next-app`
+  - `[x]` Install frontend packages (GSAP, Framer Motion, Lenis, Lucide-react, Three, React Three Fiber, Drei)
+  - `[x]` Set up Tailwind CSS theme, neon tokens, fonts, and global base styles (glassmorphism rules)
+  - `[x]` Set up core UI components (CustomCursor, Preloader, MagneticButton, Navbar, Footer)
+- `[x]` **Interactive Web Pages & UI Components**
+  - `[x]` Set up Three.js Canvas with R3F for floating futuristic interactive background particle systems
+  - `[x]` Develop website sections:
+    - `[x]` Hero section (Typewriter text, counter statistics, primary call-to-actions)
+    - `[x]` About Us section (Chronological history timeline, accordion core values)
+    - `[x]` Team section (3D tilt photo cards, skill matrix bars, social links)
+    - `[x]` Services section (Dynamic neon cards, custom descriptions & icons)
+    - `[x]` Portfolio section (Smooth filtering layouts, details drawer)
+    - `[x]` Timeline process flow diagram
+    - `[x]` Pricing tiers with monthly/yearly sliding controller
+    - `[x]` Accordion FAQ panel
+    - `[x]` Dynamic contact form (Name, email, budget range, file attachments, WhatsApp node)
+- `[x]` **Administrative Dashboard & CMS**
+  - `[x]` Create Secure Login flow
+  - `[x]` Design dashboard layout (sidebar, summary widgets, responsive layout)
+  - `[x]` Build Lead and Newsletter manager (CSV export, status pipeline updates)
+  - `[x]` Build full CMS page manager (Form lists to Create, Update, Delete team, portfolio, services, FAQs, blogs)
+- `[x]` **Verification & Walkthrough**
+  - `[x]` Run build checks for Next.js and backend connectivity tests
+  - `[x]` Document final achievements in walkthrough
