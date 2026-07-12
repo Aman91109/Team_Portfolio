@@ -76,7 +76,7 @@ export default function AdminLoginPage() {
               <ShieldAlert className="w-6 h-6 animate-pulse" />
             </div>
             <h1 className="font-space text-2xl font-bold text-white tracking-wider">
-              VORTEX CONTROL PANEL
+              PINAKI CONTROL PANEL
             </h1>
             <p className="font-mono text-[9px] tracking-widest text-[#EDEDED]/40 uppercase mt-1">
               SECURE AUTHORIZATION GATEWAY
@@ -149,7 +149,7 @@ export default function AdminLoginPage() {
 
       {/* Footer */}
       <div className="max-w-7xl mx-auto w-full text-center text-[10px] font-mono text-[#EDEDED]/30 pb-4">
-        VORTEX CONTROL PANEL // ALL CONNECTIONS ENCRYPTED OVER SSL-JWT
+        PINAKI CONTROL PANEL // ALL CONNECTIONS ENCRYPTED OVER SSL-JWT
       </div>
     </div>
   );

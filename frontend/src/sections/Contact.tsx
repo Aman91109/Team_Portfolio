@@ -149,7 +149,7 @@ export default function Contact() {
             {/* CTA channel nodes */}
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:hello@vortexlabs.agency"
+                href="mailto:hello@pinaki.agency"
                 className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-[#111720]/45 hover:border-[#8B5CF6]/40 hover:bg-[#8B5CF6]/5 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#8B5CF6]/10 flex items-center justify-center text-[#8B5CF6]">
@@ -157,7 +157,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="block text-[10px] font-mono text-[#EDEDED]/40 uppercase tracking-widest">Send Email</span>
-                  <span className="text-xs font-space text-white">hello@vortexlabs.agency</span>
+                  <span className="text-xs font-space text-white">hello@pinaki.agency</span>
                 </div>
               </a>
 

@@ -1,87 +1,87 @@
 [
   {
     "_id": "t1",
-    "name": "Aiden Vance",
-    "role": "AI & Backend Systems Architect",
-    "bio": "Ex-Google ML Engineer. Specializes in designing large scale neural networks, LLM fine-tuning, and robust Express/Go APIs. Passionate about automating industrial workflows.",
+    "name": "Somesh Kumar Mishra",
+    "role": "Full-Stack & GenAI Architect",
+    "bio": "National SIH'24 Winner. President of the MIT Coding Club. Specializes in scalable MERN applications, Socket.IO real-time data flow, Redis caches, and custom multi-role validation blocks.",
     "skills": [
       {
-        "name": "Machine Learning & DL",
+        "name": "Next.js / React / TS",
         "level": 98
       },
       {
-        "name": "Node.js / Python API",
+        "name": "Node.js & Socket.IO",
         "level": 95
       },
       {
-        "name": "MongoDB & Cloud Architecture",
+        "name": "Docker & Cloud Deployment",
         "level": 90
       }
     ],
-    "experience": "6+ Years",
-    "projectsCount": 42,
+    "experience": "4+ Years",
+    "projectsCount": 28,
     "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
     "socialLinks": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com",
+      "github": "https://github.com/Somesh-Mishra-9",
+      "linkedin": "https://www.linkedin.com/in/somesh-mishra-ba2358219/",
       "twitter": "https://twitter.com"
     },
     "createdAt": "2026-07-08T10:34:16.431Z"
   },
   {
     "_id": "t2",
-    "name": "Zephyr Croft",
-    "role": "Lead Full-Stack Web Architect",
-    "bio": "Vercel Ambassador. Obsessed with building ultra-fast React/Next.js interfaces, custom GSAP animations, and interactive web structures. Focuses heavily on pixel-perfect layouts.",
+    "name": "Nishant Kumar",
+    "role": "Backend & ML Systems Engineer",
+    "bio": "TCS NQT Top 5% Ranker. Vice President of the MIT Coding Club. Specializes in Next.js backend routing, REST controllers, Mongoose database models, and PaddleOCR/Ollama pipelines.",
     "skills": [
       {
-        "name": "Next.js / React / TS",
-        "level": 99
+        "name": "TypeScript & Node API",
+        "level": 97
       },
       {
-        "name": "Framer Motion & GSAP",
-        "level": 96
-      },
-      {
-        "name": "Tailwind CSS / Glassmorphism",
+        "name": "Python & NLP Models",
         "level": 95
+      },
+      {
+        "name": "PostgreSQL & MongoDB",
+        "level": 93
       }
     ],
-    "experience": "5+ Years",
-    "projectsCount": 58,
+    "experience": "4+ Years",
+    "projectsCount": 35,
     "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
     "socialLinks": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com",
+      "github": "https://github.com/nishant946",
+      "linkedin": "https://www.linkedin.com/in/nishant-kumar-a5b9a3258/",
       "twitter": "https://twitter.com"
     },
     "createdAt": "2026-07-08T10:34:16.431Z"
   },
   {
     "_id": "t3",
-    "name": "Elena Rostova",
-    "role": "Creative Director & UI/UX Designer",
-    "bio": "Awwwards Jury Member. Crafted experiences for global luxury brands. Specializes in dark themes, glassmorphism, responsive designs, and cinematic wireframe prototypes.",
+    "name": "Aman Kumar",
+    "role": "Computer Vision & Data Scientist",
+    "bio": "Event Coordinator at DTC Foss Club. Expert in Deep Learning (CNNs), Generative AI models, image preprocessing using OpenCV, and Supabase analytics logging pipelines.",
     "skills": [
       {
-        "name": "UI/UX Visual Design",
-        "level": 97
+        "name": "Deep Learning & CNN",
+        "level": 96
       },
       {
-        "name": "Figma & Custom Prototyping",
-        "level": 95
+        "name": "Python & Data Analytics",
+        "level": 94
       },
       {
-        "name": "Three.js & WebGL Direction",
-        "level": 85
+        "name": "Cloud & Database Mappings",
+        "level": 91
       }
     ],
-    "experience": "7+ Years",
-    "projectsCount": 84,
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
+    "experience": "3+ Years",
+    "projectsCount": 18,
+    "image": "/aman-kumar.jpg",
     "socialLinks": {
-      "github": "https://github.com",
-      "linkedin": "https://linkedin.com",
+      "github": "https://github.com/Aman91109",
+      "linkedin": "https://www.linkedin.com/in/aman-kumar-735905321",
       "twitter": "https://twitter.com"
     },
     "createdAt": "2026-07-08T10:34:16.431Z"

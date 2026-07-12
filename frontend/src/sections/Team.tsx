@@ -47,7 +47,7 @@ const fallbackTeam = [
     ],
     experience: '3+ Years',
     projectsCount: 18,
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400',
+    image: '/aman-kumar.jpg',
     socialLinks: { github: 'https://github.com/Aman91109', linkedin: 'https://www.linkedin.com/in/aman-kumar-735905321', twitter: 'https://twitter.com' },
   },
 ];

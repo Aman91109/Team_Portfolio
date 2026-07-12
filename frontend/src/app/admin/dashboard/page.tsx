@@ -264,7 +264,7 @@ export default function AdminDashboard() {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 bg-[#8B5CF6] rounded-full" />
-            <span className="font-space text-lg font-bold tracking-wider">VORTEX PANEL</span>
+            <span className="font-space text-lg font-bold tracking-wider">PINAKI PANEL</span>
           </div>
 
           {/* Navigation Links */}

@@ -57,8 +57,8 @@ const processSteps = [
     step: '07',
     name: 'Dedicated Support',
     icon: HelpCircle,
-    description: 'Vortex provides round-the-clock maintenance agreements, dependency updates, weekly database backups, and feature enhancements.',
-    lead: 'Vortex Support Engineers',
+    description: 'Pinaki provides round-the-clock maintenance agreements, dependency updates, weekly database backups, and feature enhancements.',
+    lead: 'Pinaki Support Engineers',
     color: '#6366F1'
   }
 ];

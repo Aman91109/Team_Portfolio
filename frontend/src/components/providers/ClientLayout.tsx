@@ -22,7 +22,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     return (
       <div className="min-h-screen bg-[#050816] flex items-center justify-center">
         <div className="text-[#8B5CF6] text-xl font-mono tracking-widest animate-pulse">
-          BOOTING VORTEX_
+          BOOTING PINAKI_
         </div>
       </div>
     );

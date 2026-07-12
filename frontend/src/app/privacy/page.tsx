@@ -41,7 +41,7 @@ export default function PrivacyPage() {
         <div className="prose prose-invert max-w-none text-xs md:text-sm text-[#EDEDED]/60 leading-relaxed font-poppins flex flex-col gap-6">
           <h2 className="font-space text-lg font-bold text-white uppercase tracking-wider mt-4">1. Data Nodes Collected</h2>
           <p>
-            Vortex Labs collects name, email address, phone, and company name when you voluntarily request project proposals through our contact interfaces or subscribe to our monthly insights letter. If you upload file attachments (like spec PDFs or wireframe images), they are processed using secure uploader pipelines.
+            Pinaki Labs collects name, email address, phone, and company name when you voluntarily request project proposals through our contact interfaces or subscribe to our monthly insights letter. If you upload file attachments (like spec PDFs or wireframe images), they are processed using secure uploader pipelines.
           </p>
 
           <h2 className="font-space text-lg font-bold text-white uppercase tracking-wider mt-4">2. Processing & Utilization</h2>

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Send, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { API_BASE_URL } from '@/config';
 
 export default function Footer() {
@@ -45,13 +46,17 @@ export default function Footer() {
       
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
         
-        {/* Column 1: Wordmark Logo and About */}
+        {/* Column 1: Logo and About */}
         <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 bg-[#06B6D4] rounded-full shadow-[0_0_8px_#06B6D4]" />
-            <span className="font-space text-2xl font-bold tracking-[0.2em] text-white">
-              VORTEX<span className="text-[#06B6D4]">.</span>
-            </span>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/pinaki-logo.jpg"
+              alt="PINAKI"
+              width={180}
+              height={60}
+              className="h-14 w-auto object-contain"
+            />
+            <span className="font-space text-2xl font-bold tracking-[0.2em] text-white">PINAKI</span>
           </div>
           <p className="text-xs text-[#EDEDED]/60 leading-relaxed font-poppins">
             We engineer premium, futuristic digital platforms and advanced artificial intelligence infrastructures that convert clicks into paying relationships.
@@ -99,7 +104,7 @@ export default function Footer() {
             Inquiries
           </h4>
           <div className="flex flex-col gap-3 font-poppins text-xs text-[#EDEDED]/60">
-            <p>hello@vortexlabs.agency</p>
+            <p>hello@pinaki.agency</p>
             <p>+1 (555) 732-9099</p>
             <p>Cyber Node Room #1337</p>
             <p>Silicon Valley, California</p>
@@ -150,7 +155,7 @@ export default function Footer() {
 
       {/* Copyright Line */}
       <div className="max-w-7xl mx-auto px-6 border-t border-[#1E293B] mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-[#EDEDED]/40 font-mono">
-        <div>© {new Date().getFullYear()} VORTEX LABS. ALL SYSTEMS OPERATIONAL.</div>
+        <div>© {new Date().getFullYear()} PINAKI LABS. ALL SYSTEMS OPERATIONAL.</div>
         <div className="flex gap-4">
           <a href="/privacy" className="hover:text-white transition-colors">PRIVACY</a>
           <span>//</span>

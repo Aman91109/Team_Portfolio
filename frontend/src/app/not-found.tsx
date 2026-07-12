@@ -27,7 +27,7 @@ export default function NotFound() {
         </h2>
         
         <p className="font-poppins text-xs text-[#EDEDED]/50 leading-relaxed mb-8 max-w-sm">
-          The server could not resolve the directory path or code segment requested. Ensure you have typed the address correctly or return to base vortex.
+          The server could not resolve the directory path or code segment requested. Ensure you have typed the address correctly or return to base node.
         </p>
 
         <Link

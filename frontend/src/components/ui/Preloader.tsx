@@ -9,12 +9,12 @@ interface PreloaderProps {
 
 const statusLogs = [
   'INITIALIZING SYSTEM LOGS...',
-  'CONNECTING VORTEX SUITE...',
+  'CONNECTING PINAKI SUITE...',
   'LOADING GEOMETRIC SHADER MATRICES...',
   'SEEDING MOCK DATA TABLES...',
   'BOOTING THREE.JS WebGL CANVAS...',
   'SYNCHRONIZING GSAP TIMELINES...',
-  'SYSTEM READY. ENJOY VORTEX.'
+  'SYSTEM READY. ENJOY PINAKI.'
 ];
 
 export default function Preloader({ onComplete }: PreloaderProps) {
@@ -64,7 +64,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         >
           {/* Header Tag */}
           <div className="flex justify-between items-start font-mono text-[10px] md:text-xs text-[#8B5CF6]/60 tracking-wider">
-            <div>VORTEX LABS // CORE_VER_2.6</div>
+            <div>PINAKI LABS // CORE_VER_2.6</div>
             <div>[ STATUS: CALIBRATING ]</div>
           </div>
 

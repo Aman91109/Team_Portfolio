@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 import MagneticButton from './MagneticButton';
 
 const navItems = [
@@ -11,7 +12,6 @@ const navItems = [
   { name: 'Services', href: '#services' },
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Process', href: '#process' },
-  { name: 'Pricing', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
   { name: 'Blog', href: '#blog' },
 ];
@@ -60,13 +60,19 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Futuristic Agency Wordmark */}
-          <a href="#home" className="flex items-center gap-2 select-none group">
-            <span className="w-3 h-3 bg-[#06B6D4] rounded-full shadow-[0_0_8px_#06B6D4] group-hover:bg-[#8B5CF6] group-hover:shadow-[0_0_8px_#8B5CF6] transition-all duration-300" />
-            <span className="font-space text-xl font-bold tracking-[0.2em] text-white">
-              VORTEX<span className="text-[#06B6D4]">.</span>
-            </span>
-          </a>
+          {/* Column 1: Logo and text */}
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/pinaki-logo.jpg"
+                alt="PINAKI"
+                width={180}
+                height={60}
+                className="h-14 w-auto object-contain"
+              />
+              <span className="font-space text-2xl font-bold tracking-[0.2em] text-white">PINAKI</span>
+            </div>
+          </div>
 
           {/* Desktop Navigation Link Nodes */}
           <nav className="hidden lg:flex items-center gap-8">

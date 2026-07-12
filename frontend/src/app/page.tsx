@@ -12,7 +12,7 @@ import Services from '@/sections/Services';
 import Team from '@/sections/Team';
 import Portfolio from '@/sections/Portfolio';
 import Process from '@/sections/Process';
-import Pricing from '@/sections/Pricing';
+
 import FAQ from '@/sections/FAQ';
 import BlogSection from '@/sections/BlogSection';
 import Contact from '@/sections/Contact';
@@ -22,7 +22,7 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [chatMessages, setChatMessages] = useState([
-    { sender: 'bot', text: 'Greetings, human. I am Vortex-AI. How can I assist your digital engineering journey today?' },
+    { sender: 'bot', text: 'Greetings, human. I am Pinaki-AI. How can I assist your digital engineering journey today?' },
   ]);
   const [inputVal, setInputVal] = useState('');
 
@@ -54,9 +54,9 @@ export default function Home() {
     setTimeout(() => {
       let botText = "Processing data nodes... Let me fetch Elena or Aiden to coordinate this request. What is your email?";
       if (userMsg.toLowerCase().includes('price') || userMsg.toLowerCase().includes('cost')) {
-        botText = "Our full-stack implementation blocks start at $4,999, fully integrated. Check our /#pricing block, or tell me your email so we can quote your spec.";
+        botText = "Our full-stack implementation blocks start at $4,999, fully integrated. Tell me your email so we can quote your spec.";
       } else if (userMsg.toLowerCase().includes('portfolio') || userMsg.toLowerCase().includes('work')) {
-        botText = "We have delivered over 120 custom builds. Explore the /#portfolio grid, or send your requirements file to Hello@vortexlabs.agency.";
+        botText = "We have delivered over 120 custom builds. Explore the /#portfolio grid, or send your requirements file to Hello@pinaki.agency.";
       } else if (userMsg.toLowerCase().includes('email') || userMsg.includes('@')) {
         botText = "Coordinates locked. Aiden Vance will follow up shortly at your email to arrange our discovery meeting.";
       }
@@ -77,7 +77,6 @@ export default function Home() {
         <Team />
         <Portfolio />
         <Process />
-        <Pricing />
         <FAQ />
         <BlogSection />
         <Contact />
@@ -132,7 +131,7 @@ export default function Home() {
               <div className="bg-[#111720] border-b border-white/5 p-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span className="font-space text-xs font-bold text-white tracking-widest uppercase">VORTEX NEURAL BOT</span>
+                  <span className="font-space text-xs font-bold text-white tracking-widest uppercase">PINAKI NEURAL BOT</span>
                 </div>
                 <button onClick={() => setChatOpen(false)} className="text-white/40 hover:text-white transition-colors cursor-pointer">
                   <X className="w-4 h-4" />
@@ -159,7 +158,7 @@ export default function Home() {
               <form onSubmit={handleSendChat} className="bg-[#111720] border-t border-white/5 p-3 flex gap-2">
                 <input
                   type="text"
-                  placeholder="Ask Vortex-AI..."
+                  placeholder="Ask Pinaki-AI..."
                   value={inputVal}
                   onChange={(e) => setInputVal(e.target.value)}
                   className="flex-1 bg-[#050816] border border-white/5 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#06B6D4] transition-colors"

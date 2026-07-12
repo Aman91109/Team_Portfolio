@@ -41,12 +41,12 @@ export default function TermsPage() {
         <div className="prose prose-invert max-w-none text-xs md:text-sm text-[#EDEDED]/60 leading-relaxed font-poppins flex flex-col gap-6">
           <h2 className="font-space text-lg font-bold text-white uppercase tracking-wider mt-4">1. Agreement of Engagements</h2>
           <p>
-            By submitting a project inquiry or selecting one of our pricing tiers (Starter, Professional, Enterprise), you agree to initiate a project discussion. No binding code development contracts are established until a scope specification agreement has been co-signed by both the client and a representative of Vortex Labs.
+            By submitting a project inquiry or selecting one of our pricing tiers (Starter, Professional, Enterprise), you agree to initiate a project discussion. No binding code development contracts are established until a scope specification agreement has been co-signed by both the client and a representative of Pinaki Labs.
           </p>
 
           <h2 className="font-space text-lg font-bold text-white uppercase tracking-wider mt-4">2. Figma Designs & Wireframes</h2>
           <p>
-            Elena Rostova manages all project user journey blueprints and Figma prototypes. All draft wireframes delivered during the design phase remain the property of Vortex Labs until full payment milestones are completed, upon which full Figma file ownership transitions to the client.
+            Elena Rostova manages all project user journey blueprints and Figma prototypes. All draft wireframes delivered during the design phase remain the property of Pinaki Labs until full payment milestones are completed, upon which full Figma file ownership transitions to the client.
           </p>
 
           <h2 className="font-space text-lg font-bold text-white uppercase tracking-wider mt-4">3. Source Code Licenses</h2>

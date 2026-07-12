@@ -57,7 +57,7 @@ export default function About() {
             </h3>
             
             <p className="font-poppins text-sm text-[#EDEDED]/60 leading-relaxed">
-              Vortex Labs was founded by three creative engineers who got tired of cookie-cutter software solutions. We realized that elite agencies were gatekeeping high-end visual designs (Awwwards-tier) from growing enterprises, while traditional software houses delivered boring, slow platforms.
+              Pinaki Labs was founded by three creative engineers who got tired of cookie-cutter software solutions. We realized that elite agencies were gatekeeping high-end visual designs (Awwwards-tier) from growing enterprises, while traditional software houses delivered boring, slow platforms.
             </p>
 
             <p className="font-poppins text-sm text-[#EDEDED]/60 leading-relaxed">
@@ -69,7 +69,7 @@ export default function About() {
               <p className="font-space text-xs italic text-[#EDEDED]/80">
                 &ldquo;We don&apos;t build minimum viable products. We build digital command consoles that command market authority and instantly lock in client trust.&rdquo;
               </p>
-              <span className="block font-mono text-[10px] text-[#8B5CF6] mt-2 uppercase tracking-widest">— VORTEX TEAM FOUNDERS</span>
+              <span className="block font-mono text-[10px] text-[#8B5CF6] mt-2 uppercase tracking-widest">— PINAKI TEAM FOUNDERS</span>
             </div>
           </div>
 
