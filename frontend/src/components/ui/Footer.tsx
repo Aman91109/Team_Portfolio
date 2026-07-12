@@ -43,9 +43,9 @@ export default function Footer() {
     <footer className="relative border-t border-[#1E293B] bg-[#050816] pt-20 pb-10 z-10 overflow-hidden">
       {/* Grid Mesh Effect */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:30px_30px]" />
-      
+
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
-        
+
         {/* Column 1: Logo and About */}
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3">
@@ -105,7 +105,7 @@ export default function Footer() {
           </h4>
           <div className="flex flex-col gap-3 font-poppins text-xs text-[#EDEDED]/60">
             <p>hello@pinaki.agency</p>
-            <p>+1 (555) 732-9099</p>
+            <p>+91 9508725672</p>
             <p>Cyber Node Room #1337</p>
             <p>Silicon Valley, California</p>
           </div>

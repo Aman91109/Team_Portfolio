@@ -38,7 +38,7 @@ const fallbackTeam = [
   },
   {
     name: 'Aman Kumar',
-    role: 'Computer Vision & Data Scientist',
+    role: 'Researcher & Data Scientist',
     bio: 'Event Coordinator at DTC Foss Club. Expert in Deep Learning (CNNs), Generative AI models, image preprocessing using OpenCV, and Supabase analytics logging pipelines.',
     skills: [
       { name: 'Deep Learning & CNN', level: 96 },
@@ -107,7 +107,7 @@ export default function Team() {
                     />
                     {/* Dark gradient fade on image bottom */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent opacity-60" />
-                    
+
                     {/* Hover detail slide-up */}
                     <div className="absolute bottom-4 left-4 right-4 z-20 flex gap-2 justify-between items-center bg-[#0B1120]/80 backdrop-blur-md border border-white/10 p-3 rounded-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <div className="flex items-center gap-1 text-[10px] font-mono tracking-widest uppercase text-[#06B6D4]">
