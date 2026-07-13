@@ -104,7 +104,7 @@ export default function Footer() {
             Inquiries
           </h4>
           <div className="flex flex-col gap-3 font-poppins text-xs text-[#EDEDED]/60">
-            <p>hello@pinaki.agency</p>
+            <a href="mailto:pinaki.sna@gmail.com" className="hover:text-[#06B6D4] transition-colors">pinaki.sna@gmail.com</a>
             <p>+91 9508725672</p>
             <p>Cyber Node Room #1337</p>
             <p>Silicon Valley, California</p>
