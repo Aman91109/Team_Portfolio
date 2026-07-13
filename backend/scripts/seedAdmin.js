@@ -76,7 +76,7 @@ const seedData = async () => {
         ],
         experience: '4+ Years',
         projectsCount: 28,
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
+        image: '/somesh.jpg',
         socialLinks: { github: 'https://github.com/Somesh-Mishra-9', linkedin: 'https://www.linkedin.com/in/somesh-mishra-ba2358219/', twitter: 'https://twitter.com' },
       },
       {
@@ -90,7 +90,7 @@ const seedData = async () => {
         ],
         experience: '4+ Years',
         projectsCount: 35,
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400',
+        image: '/nishant.jpg',
         socialLinks: { github: 'https://github.com/nishant946', linkedin: 'https://www.linkedin.com/in/nishant-kumar-a5b9a3258/', twitter: 'https://twitter.com' },
       },
       {
