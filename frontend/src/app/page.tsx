@@ -18,6 +18,7 @@ import BlogSection from '@/sections/BlogSection';
 import Contact from '@/sections/Contact';
 import Footer from '@/components/ui/Footer';
 import PinakiChatbot from '@/components/ui/PinakiChatbot';
+import ElevenLabsVoiceAgent from '@/components/ui/ElevenLabsVoiceAgent';
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -82,6 +83,9 @@ export default function Home() {
 
       {/* B. Pinaki AI Chatbot */}
       <PinakiChatbot />
+
+      {/* C. ElevenLabs AI Voice Assistant */}
+      <ElevenLabsVoiceAgent />
     </>
   );
 }
