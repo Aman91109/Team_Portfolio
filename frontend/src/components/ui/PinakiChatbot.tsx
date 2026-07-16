@@ -2,12 +2,17 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Sparkles, Mic } from 'lucide-react';
 
 // ─────────────────────────────────────────────────────────
-//  PINAKI CHATBOT — Static Knowledge-Based AI Assistant
-//  All portfolio data is embedded for instant responses.
+//  PINAKI AI HUB — Unified Chat + Voice Assistant
+//  Text chatbot with knowledge base + ElevenLabs voice agent
+//  in a single floating widget.
 // ─────────────────────────────────────────────────────────
+
+const ELEVENLABS_AGENT_ID = 'agent_1601kxmrsz2dfp8amphvhg2rbkkr';
+
+type ActiveTab = 'chat' | 'voice';
 
 interface ChatMessage {
   sender: 'bot' | 'user';
@@ -412,11 +417,99 @@ function formatMessage(text: string): React.ReactNode {
 }
 
 // ═════════════════════════════════════════════════
-//  MAIN CHATBOT COMPONENT
+//  VOICE TAB COMPONENT
+// ═════════════════════════════════════════════════
+
+function VoiceTab() {
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    if (document.querySelector('script[src="https://elevenlabs.io/convai-widget/index.js"]')) {
+      setScriptLoaded(true);
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://elevenlabs.io/convai-widget/index.js';
+    script.async = true;
+    script.type = 'text/javascript';
+    script.onload = () => setScriptLoaded(true);
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    <div className="flex-1 flex flex-col items-center justify-center p-5 gap-4">
+      {/* Decorative audio wave visualization */}
+      <div className="flex items-end gap-[3px] h-10">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="w-[3px] rounded-full bg-gradient-to-t from-[#06B6D4] to-[#8B5CF6]"
+            animate={{
+              height: [
+                `${6 + Math.random() * 14}px`,
+                `${18 + Math.random() * 22}px`,
+                `${6 + Math.random() * 14}px`,
+              ],
+            }}
+            transition={{
+              duration: 0.8 + Math.random() * 0.6,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.04,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Info Text */}
+      <div className="text-center space-y-2 max-w-[280px]">
+        <p className="text-xs text-white/70 font-poppins leading-relaxed">
+          Speak with <span className="text-[#06B6D4] font-semibold">Pinaki Voice AI</span> to learn about our services, pricing, and process.
+        </p>
+        <p className="text-[10px] text-white/30 font-mono tracking-wide uppercase">
+          Click the microphone below to start
+        </p>
+      </div>
+
+      {/* ElevenLabs Widget */}
+      <div className="w-full flex justify-center items-center min-h-[80px]">
+        {scriptLoaded ? (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<elevenlabs-convai agent-id="${ELEVENLABS_AGENT_ID}"></elevenlabs-convai>`,
+            }}
+          />
+        ) : (
+          <div className="flex items-center gap-2 text-white/30 text-xs font-mono">
+            <motion.div
+              className="w-4 h-4 border-2 border-[#06B6D4]/40 border-t-[#06B6D4] rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+            />
+            Loading voice agent...
+          </div>
+        )}
+      </div>
+
+      {/* Security Badge */}
+      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.05]">
+        <div className="w-1.5 h-1.5 rounded-full bg-green-400/70" />
+        <span className="text-[9px] font-mono text-white/25 tracking-wider uppercase">
+          Powered by ElevenLabs • Encrypted
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// ═════════════════════════════════════════════════
+//  MAIN UNIFIED COMPONENT
 // ═════════════════════════════════════════════════
 
 export default function PinakiChatbot() {
   const [chatOpen, setChatOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<ActiveTab>('chat');
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'bot',
@@ -434,12 +527,12 @@ export default function PinakiChatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
 
-  // Focus input when chat opens
+  // Focus input when chat opens or tab switches to chat
   useEffect(() => {
-    if (chatOpen) {
+    if (chatOpen && activeTab === 'chat') {
       setTimeout(() => inputRef.current?.focus(), 300);
     }
-  }, [chatOpen]);
+  }, [chatOpen, activeTab]);
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
@@ -479,7 +572,7 @@ export default function PinakiChatbot() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* ─── Chat Panel ─── */}
+      {/* ─── Unified Panel ─── */}
       <AnimatePresence>
         {chatOpen && (
           <motion.div
@@ -487,22 +580,22 @@ export default function PinakiChatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="w-[360px] sm:w-[400px] h-[520px] rounded-2xl border border-white/10 bg-[#0B1120]/98 backdrop-blur-2xl flex flex-col overflow-hidden shadow-[0_0_50px_rgba(139,92,246,0.12)]"
+            className="w-[360px] sm:w-[400px] h-[540px] rounded-2xl border border-white/10 bg-[#0B1120]/98 backdrop-blur-2xl flex flex-col overflow-hidden shadow-[0_0_50px_rgba(139,92,246,0.12)]"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#111720] to-[#0B1120] border-b border-white/5 px-5 py-4 flex items-center justify-between shrink-0">
+            <div className="bg-gradient-to-r from-[#111720] to-[#0B1120] border-b border-white/5 px-5 py-3.5 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#06B6D4] flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.3)]">
                   <Bot className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <span className="font-space text-sm font-bold text-white tracking-wide flex items-center gap-1.5">
-                    Pinaki
+                    Pinaki AI
                     <Sparkles className="w-3.5 h-3.5 text-[#06B6D4]" />
                   </span>
                   <span className="flex items-center gap-1.5 text-[9px] font-mono text-green-400 tracking-wider uppercase">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    Online • AI Assistant
+                    Online • {activeTab === 'chat' ? 'Text Mode' : 'Voice Mode'}
                   </span>
                 </div>
               </div>
@@ -514,98 +607,161 @@ export default function PinakiChatbot() {
               </button>
             </div>
 
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3 scrollbar-hide">
-              {messages.map((msg, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className={`flex gap-2 ${msg.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
-                >
-                  {/* Avatar */}
-                  <div
-                    className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
-                      msg.sender === 'bot'
-                        ? 'bg-gradient-to-br from-[#8B5CF6]/20 to-[#06B6D4]/20 border border-[#8B5CF6]/20'
-                        : 'bg-[#8B5CF6]/15 border border-[#8B5CF6]/20'
-                    }`}
-                  >
-                    {msg.sender === 'bot' ? (
-                      <Bot className="w-3.5 h-3.5 text-[#06B6D4]" />
-                    ) : (
-                      <User className="w-3.5 h-3.5 text-[#8B5CF6]" />
-                    )}
-                  </div>
-
-                  {/* Bubble */}
-                  <div
-                    className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-[11.5px] leading-[1.65] font-poppins ${
-                      msg.sender === 'user'
-                        ? 'bg-gradient-to-r from-[#8B5CF6]/25 to-[#8B5CF6]/15 border border-[#8B5CF6]/25 text-white rounded-tr-md'
-                        : 'bg-white/[0.04] border border-white/[0.06] text-[#EDEDED]/85 rounded-tl-md'
-                    }`}
-                  >
-                    {formatMessage(msg.text)}
-                  </div>
-                </motion.div>
-              ))}
-
-              {/* Typing Indicator */}
-              {isTyping && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="flex gap-2 items-center"
-                >
-                  <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#8B5CF6]/20 to-[#06B6D4]/20 border border-[#8B5CF6]/20 flex items-center justify-center">
-                    <Bot className="w-3.5 h-3.5 text-[#06B6D4]" />
-                  </div>
-                  <div className="bg-white/[0.04] border border-white/[0.06] rounded-2xl rounded-tl-md px-4 py-3 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-bounce" style={{ animationDelay: '300ms' }} />
-                  </div>
-                </motion.div>
-              )}
-
-              <div ref={messagesEndRef} />
+            {/* ─── Tab Switcher ─── */}
+            <div className="flex shrink-0 border-b border-white/5 bg-[#0B1120]/60">
+              <button
+                onClick={() => setActiveTab('chat')}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-[11px] font-mono tracking-wider uppercase transition-all cursor-pointer relative ${
+                  activeTab === 'chat'
+                    ? 'text-[#06B6D4]'
+                    : 'text-white/30 hover:text-white/50'
+                }`}
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                Chat
+                {activeTab === 'chat' && (
+                  <motion.div
+                    layoutId="activeTabIndicator"
+                    className="absolute bottom-0 left-2 right-2 h-[2px] bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] rounded-full"
+                  />
+                )}
+              </button>
+              <button
+                onClick={() => setActiveTab('voice')}
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-[11px] font-mono tracking-wider uppercase transition-all cursor-pointer relative ${
+                  activeTab === 'voice'
+                    ? 'text-[#06B6D4]'
+                    : 'text-white/30 hover:text-white/50'
+                }`}
+              >
+                <Mic className="w-3.5 h-3.5" />
+                Voice
+                {activeTab === 'voice' && (
+                  <motion.div
+                    layoutId="activeTabIndicator"
+                    className="absolute bottom-0 left-2 right-2 h-[2px] bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6] rounded-full"
+                  />
+                )}
+              </button>
             </div>
 
-            {/* Quick Suggestions (only when few messages) */}
-            {messages.length <= 2 && (
-              <div className="px-4 pb-2 flex gap-2 flex-wrap">
-                {suggestions.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => handleSuggestion(s)}
-                    className="px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-[10px] font-mono text-[#06B6D4] tracking-wider uppercase hover:bg-[#06B6D4]/10 hover:border-[#06B6D4]/25 transition-all cursor-pointer"
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* ─── Tab Content ─── */}
+            <AnimatePresence mode="wait">
+              {activeTab === 'chat' ? (
+                <motion.div
+                  key="chat-tab"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.15 }}
+                  className="flex-1 flex flex-col overflow-hidden"
+                >
+                  {/* Messages */}
+                  <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3 scrollbar-hide">
+                    {messages.map((msg, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className={`flex gap-2 ${msg.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
+                      >
+                        {/* Avatar */}
+                        <div
+                          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
+                            msg.sender === 'bot'
+                              ? 'bg-gradient-to-br from-[#8B5CF6]/20 to-[#06B6D4]/20 border border-[#8B5CF6]/20'
+                              : 'bg-[#8B5CF6]/15 border border-[#8B5CF6]/20'
+                          }`}
+                        >
+                          {msg.sender === 'bot' ? (
+                            <Bot className="w-3.5 h-3.5 text-[#06B6D4]" />
+                          ) : (
+                            <User className="w-3.5 h-3.5 text-[#8B5CF6]" />
+                          )}
+                        </div>
 
-            {/* Input */}
-            <form onSubmit={handleSend} className="border-t border-white/5 bg-[#111720]/80 px-4 py-3 flex gap-2 shrink-0">
-              <input
-                ref={inputRef}
-                type="text"
-                placeholder="Ask Pinaki anything..."
-                value={inputVal}
-                onChange={(e) => setInputVal(e.target.value)}
-                className="flex-1 bg-[#050816]/80 border border-white/[0.06] rounded-xl px-4 py-2.5 text-xs text-white placeholder-white/25 focus:outline-none focus:border-[#06B6D4]/40 transition-colors"
-              />
-              <button
-                type="submit"
-                disabled={!inputVal.trim()}
-                className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] text-white flex items-center justify-center hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
-              >
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
+                        {/* Bubble */}
+                        <div
+                          className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-[11.5px] leading-[1.65] font-poppins ${
+                            msg.sender === 'user'
+                              ? 'bg-gradient-to-r from-[#8B5CF6]/25 to-[#8B5CF6]/15 border border-[#8B5CF6]/25 text-white rounded-tr-md'
+                              : 'bg-white/[0.04] border border-white/[0.06] text-[#EDEDED]/85 rounded-tl-md'
+                          }`}
+                        >
+                          {formatMessage(msg.text)}
+                        </div>
+                      </motion.div>
+                    ))}
+
+                    {/* Typing Indicator */}
+                    {isTyping && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex gap-2 items-center"
+                      >
+                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#8B5CF6]/20 to-[#06B6D4]/20 border border-[#8B5CF6]/20 flex items-center justify-center">
+                          <Bot className="w-3.5 h-3.5 text-[#06B6D4]" />
+                        </div>
+                        <div className="bg-white/[0.04] border border-white/[0.06] rounded-2xl rounded-tl-md px-4 py-3 flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-bounce" style={{ animationDelay: '0ms' }} />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6] animate-bounce" style={{ animationDelay: '150ms' }} />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-bounce" style={{ animationDelay: '300ms' }} />
+                        </div>
+                      </motion.div>
+                    )}
+
+                    <div ref={messagesEndRef} />
+                  </div>
+
+                  {/* Quick Suggestions (only when few messages) */}
+                  {messages.length <= 2 && (
+                    <div className="px-4 pb-2 flex gap-2 flex-wrap">
+                      {suggestions.map((s) => (
+                        <button
+                          key={s}
+                          onClick={() => handleSuggestion(s)}
+                          className="px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-[10px] font-mono text-[#06B6D4] tracking-wider uppercase hover:bg-[#06B6D4]/10 hover:border-[#06B6D4]/25 transition-all cursor-pointer"
+                        >
+                          {s}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Input */}
+                  <form onSubmit={handleSend} className="border-t border-white/5 bg-[#111720]/80 px-4 py-3 flex gap-2 shrink-0">
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      placeholder="Ask Pinaki anything..."
+                      value={inputVal}
+                      onChange={(e) => setInputVal(e.target.value)}
+                      className="flex-1 bg-[#050816]/80 border border-white/[0.06] rounded-xl px-4 py-2.5 text-xs text-white placeholder-white/25 focus:outline-none focus:border-[#06B6D4]/40 transition-colors"
+                    />
+                    <button
+                      type="submit"
+                      disabled={!inputVal.trim()}
+                      className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#06B6D4] text-white flex items-center justify-center hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                    >
+                      <Send className="w-4 h-4" />
+                    </button>
+                  </form>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="voice-tab"
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 10 }}
+                  transition={{ duration: 0.15 }}
+                  className="flex-1 flex flex-col overflow-hidden"
+                >
+                  <VoiceTab />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
@@ -624,7 +780,7 @@ export default function PinakiChatbot() {
             </motion.div>
           ) : (
             <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-              <MessageCircle className="w-6 h-6" />
+              <Sparkles className="w-6 h-6" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -636,7 +792,7 @@ export default function PinakiChatbot() {
 
         {/* Hover tooltip */}
         <span className="absolute bottom-full right-0 mb-2 px-3 py-1.5 rounded-lg bg-[#111720] border border-white/10 text-[10px] font-mono text-white/70 tracking-wider uppercase whitespace-nowrap opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all pointer-events-none">
-          Chat with Pinaki
+          Pinaki AI Hub
         </span>
       </motion.button>
     </div>
