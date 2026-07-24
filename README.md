@@ -1,6 +1,6 @@
-# Vortex Labs Agency — Core Team Directory
+# PINAKI — Core Team Directory
 
-This directory profiles the three founding software engineers and system architects of **Vortex Labs**. It details their core competencies, technical skills, professional internships, and flagship full-stack / AI-ML engineering projects.
+This directory profiles the three founding software engineers and system architects of **PINAKI**. It details their core competencies, technical skills, professional internships, and flagship full-stack / AI-ML engineering projects.
 
 ---
 
@@ -106,7 +106,7 @@ Information Technology undergraduate specializing in backend architecture, secur
 
 ## 3. Aman Kumar
 
-**Computer Vision & Data Science Specialist**  
+**Researcher & Data Science Specialist**  
 *Delhi, India* | +91 9508725672 | [amank32102@gmail.com](mailto:amank32102@gmail.com) | [LinkedIn](https://www.linkedin.com/in/aman-kumar-735905321) | [GitHub](https://github.com/Aman91109)
 
 ### 📌 Summary
